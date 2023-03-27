@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:plant_species/action_card.dart';
 import 'package:plant_species/navigation.dart';
 import 'package:plant_species/dashboard.dart';
 import 'dart:io';
@@ -18,11 +19,15 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
-    
-    Timer(const Duration(seconds: 4,),
-    ()=> Navigator.push(context, MaterialPageRoute(builder: ((context) => Navigation()))));
+    Timer(
+        const Duration(
+          seconds: 4,
+        ),
+        () => Navigator.push(
+            context, MaterialPageRoute(builder: ((context) => Navigation()))));
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,28 +66,39 @@ class _HomeState extends State<Home> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: FutureBuilder(
-                          future: Future.delayed(const Duration(seconds: 1), () {}),
-                          builder: (c, s) =>
-                              s.connectionState == ConnectionState.done
-                                  ? TextLiquidFill(
-                                      text: 'BotaniCam',
+                          future:
+                              Future.delayed(const Duration(seconds: 1), () {}),
+                          builder: (c, s) => s.connectionState ==
+                                  ConnectionState.done
+                              ? Column(
+                                  children: [
+                                    ActionCard(
+                                        width: double.infinity,
+                                        height: 250,
+                                        title: '',
+                                        anim: 'plant',
+                                        voidCallback: () {},
+                                        animOnly: true),
+                                    TextLiquidFill(
+                                      text: 'Botani Cam',
                                       textAlign: TextAlign.center,
                                       waveColor: Colors.lightGreen,
                                       boxBackgroundColor: Colors.white,
-                                      loadDuration: const Duration(seconds: 2),
+                                      loadDuration: const Duration(seconds: 1),
                                       textStyle: const TextStyle(
                                         fontSize: 40,
                                         fontWeight: FontWeight.bold,
                                       ),
                                       boxHeight: 200.0,
-                                    )
-                                  : const Text("")),
+                                    ),
+                                  ],
+                                )
+                              : const Text("")),
                     ),
                   ),
                 ),
               ],
             ),
-            
           ],
         ),
       ),
