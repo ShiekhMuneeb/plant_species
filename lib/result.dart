@@ -13,18 +13,20 @@ class Result extends StatefulWidget {
 }
 
 class _ResultState extends State<Result> {
-  @override
   File? imageFile;
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Result",
-           style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    letterSpacing: 2,
-                  ),
+          title: const Text(
+            "Result",
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w900,
+              color: Colors.white,
+              letterSpacing: 2,
+            ),
           ),
           centerTitle: true,
           backgroundColor: Colors.lightGreen,
@@ -36,101 +38,94 @@ class _ResultState extends State<Result> {
           //   image: AssetImage("images/b1.jpeg"),
           //   fit: BoxFit.cover,
           // )
-         // ),
+          // ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-             Container(
-              height:250,
-          
-              child: Stack(children: [
-                Positioned(
-                  top:0,
-                  left:0,
-                  child: Container(
-                margin: EdgeInsets.only(top:3),
-                 color: Colors.black.withOpacity(.5),
-                  height:240,
-                  width:MediaQuery.of(context).size.width * 1,
-                  child:  Image.file(File(Dashboard.image_result!.path),
-                  fit:BoxFit.fill),
-                )),
-                Positioned(
-                  top:190,
-                  left:20,
-                  child: Container(
-                margin: EdgeInsets.only(top:3),
-               
-                  height:240,
-                  width:MediaQuery.of(context).size.width * 1,
-                  child: Text('Ageratum ',
+              Container(
+                height: 250,
+                child: Stack(children: [
+                  Positioned(
+                      top: 0,
+                      left: 0,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 3),
+                        color: Colors.black.withOpacity(.5),
+                        height: 240,
+                        width: MediaQuery.of(context).size.width * 1,
+                        child: Image.file(File(Dashboard.imageResult!.path),
+                            fit: BoxFit.fill),
+                      )),
+                  Positioned(
+                      top: 190,
+                      left: 20,
+                      child: Container(
+                          margin: EdgeInsets.only(top: 3),
+                          height: 240,
+                          width: MediaQuery.of(context).size.width * 1,
+                          child: Text(
+                            'Ageratum ',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white,
+                              letterSpacing: 2,
+                            ),
+                          ))),
+                ]),
+              ),
+              SizedBox(height: 5),
+              Padding(
+                padding: EdgeInsets.only(left: 15),
+                child: Text(
+                  'Family Name',
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 20,
                     fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    letterSpacing: 2,
+                    color: Colors.black.withOpacity(0.7),
+                    // letterSpacing: 2,
                   ),
-                  )
-                )),
-              ]),
-             ),
-             SizedBox(height:5),
-             Padding
-             (
-              padding:EdgeInsets.only(left: 15),
-               child: Text('FAMILY NAME',
-               style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.black.withOpacity(0.7),
-                     // letterSpacing: 2,
-                    ),
-               ),
-             ),
-             SizedBox(height:5),
-              Padding
-             (
-              padding:EdgeInsets.only(left: 15),
-               child: Text('Asteraceae',
-               style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.lightGreen.withOpacity(.8),
-                      
-                    ),
-               ),
-             ),
-             SizedBox(height:15),
-              Padding
-             (
-              padding:EdgeInsets.only(left: 15),
-               child: Text('DESCRIPTION',
-               style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.black.withOpacity(0.7),
-                     // letterSpacing: 2,
-                    ),
-               ),
-             ),
-             SizedBox(height:5),
-              Container
-             (
-              
-              padding: EdgeInsets.symmetric(horizontal: 15),
-             // alignment: Alignment.center,
-               child: Text('Ageratum is prized for its blue flowers and is one of best blue-flowered annuals available. Ageratum performs best in the late spring and early summer and in the early fall. Some varieties have more heat tolerance especially the vegetatively propagated types.',
-              textAlign: TextAlign.justify,
-              
-               style: TextStyle(
-                
-                      fontSize: 14,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.lightGreen.withOpacity(.8),
-                      
-                    ),
-               ),
-             )
+                ),
+              ),
+              SizedBox(height: 5),
+              Padding(
+                padding: EdgeInsets.only(left: 15),
+                child: Text(
+                  'Asteraceae',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.lightGreen.withOpacity(.8),
+                  ),
+                ),
+              ),
+              SizedBox(height: 15),
+              Padding(
+                padding: EdgeInsets.only(left: 15),
+                child: Text(
+                  'Description',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.black.withOpacity(0.7),
+                    // letterSpacing: 2,
+                  ),
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                // alignment: Alignment.center,
+                child: Text(
+                  'Ageratum is prized for its blue flowers and is one of best blue-flowered annuals available. Ageratum performs best in the late spring and early summer and in the early fall. Some varieties have more heat tolerance especially the vegetatively propagated types.',
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.lightGreen.withOpacity(.8),
+                  ),
+                ),
+              )
               // SizedBox(
               //   height: 20,
               // ),
@@ -142,7 +137,7 @@ class _ResultState extends State<Result> {
               //       children: [
               //         TextSpan(
               //           text: '  Ageratum ' + "(Plant Name)",
-                        
+
               //         ),
               //         WidgetSpan(
               //           child: Transform.translate(
